@@ -135,6 +135,7 @@ while run:  # Начинаем бесконечный цикл
         hit_another_car = pygame.sprite.spritecollide(car, cars, False)
         if hit_another_car:
             car.sound.play()
+            car.sound.set_volume(0.1)
             expl = Explosion(car.rect.center)  # Создаем взрыв на месте авто
             all_sprites.add(expl)
             if car.type == 'forward':
